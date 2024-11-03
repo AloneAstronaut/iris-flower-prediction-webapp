@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prediction Result</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-image: url('https://imgs.search.brave.com/q-gI8by2Bnfcws-PB49pQvtGvTdvRlpxYjF0n7VXD1w/rs:fit:500:0:0:0/g:ce/aHR0cHM6Ly9jZG4u/d2FsbHBhcGVyc2Fm/YXJpLmNvbS85NC83/L1RqTUVIYi5qcGc'); /* Replace with your actual image URL */
+            background-size: cover; /* Ensure the image covers the entire area */
+            background-position: center; /* Center the image */
+            background-attachment: fixed; /* Keep the image fixed during scrolling */
+            margin: 0;
+            padding: 20px;
+            color: #333;
+        }
+
+        .overlay {
+            background-color: rgba(255, 255, 255, 0.8); /* White with transparency */
+            padding: 40px; /* Padding around the text */
+            border-radius: 10px; /* Rounded corners */
+            max-width: 600px; /* Max width for the overlay */
+            margin: 0 auto; /* Center the overlay */
+            text-align: center; /* Center the text */
+        }
+
+        h1 {
+            color: #2e7d32;
+            margin-bottom: 20px;
+            font-size: 2.5em;
+        }
+
+        h2 {
+            color: #d32f2f;
+            font-size: 2.2em;
+            margin-top: 10px;
+        }
+
+        a {
+            display: inline-block;
+            background-color: #4CAF50;
+            color: white;
+            text-decoration: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            margin: 20px auto;
+            font-size: 1.2em;
+            transition: background-color 0.3s ease;
+        }
+
+        a:hover {
+            background-color: #388E3C; /* Darker shade on hover */
+        }
+
+        @media (max-width: 600px) {
+            h1 {
+                font-size: 2em;
+            }
+
+            h2 {
+                font-size: 1.8em;
+            }
+
+            a {
+                font-size: 1em;
+                padding: 8px 15px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="overlay">
+        <h1>Prediction Result</h1>
+        <h2>Predicted Species: {{ prediction }}</h2>
+        <a href="/predict">Make another prediction</a>
+    </div>
+</body>
+</html>

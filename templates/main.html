@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Iris Flower Prediction App</title>
+    <style>
+        html, body {
+            height: 100%; /* Ensure the body takes up the full height */
+            margin: 0; /* Remove default margin */
+        }
+
+        body {
+            display: flex; /* Make body a flex container */
+            flex-direction: column; /* Stack children vertically */
+            font-family: 'Roboto', sans-serif;
+            background-image: url('https://imgs.search.brave.com/q-gI8by2Bnfcws-PB49pQvtGvTdvRlpxYjF0n7VXD1w/rs:fit:500:0:0:0/g:ce/aHR0cHM6Ly9jZG4u/d2FsbHBhcGVyc2Fm/YXJpLmNvbS85NC83/L1RqTUVIYi5qcGc'); /* Update path */
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            color: #333;
+            padding: 0;
+        }
+
+        header {
+            background-color: rgba(46, 125, 50, 0.85);
+            color: white;
+            padding: 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: relative;
+            z-index: 2;
+        }
+
+        h1 {
+            margin: 0;
+            font-size: 2em;
+            text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
+        }
+
+        .nav-link {
+            color: white;
+            text-decoration: none;
+            margin-left: 20px;
+            padding: 10px;
+            transition: color 0.3s;
+        }
+
+        .nav-link:hover {
+            color: #a5d6a7;
+        }
+
+        .login-button {
+            background-color: #fff;
+            color: #4CAF50;
+            padding: 10px 20px;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: background-color 0.3s, transform 0.3s;
+        }
+
+        .login-button:hover {
+            background-color: #e7e7e7;
+            transform: scale(1.05);
+        }
+
+        main {
+            flex: 1; /* Allow main to grow and fill the available space */
+            padding: 40px 20px;
+            display: flex;
+            justify-content: center;
+            z-index: 2;
+        }
+
+        section {
+            background-color: rgba(255, 255, 255, 0.9);
+            border-radius: 8px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+            padding: 30px;
+            max-width: 600px;
+            width: 100%;
+            transition: box-shadow 0.3s, transform 0.3s;
+        }
+
+        section:hover {
+            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.4);
+            transform: translateY(-5px);
+        }
+
+        h2 {
+            color: #388e3c;
+            margin-bottom: 15px;
+            font-size: 1.5em;
+            text-align: center;
+        }
+
+        p {
+            color: #504848;
+            line-height: 1.6;
+            margin-bottom: 15px;
+        }
+
+        footer {
+            text-align: center;
+            padding: 20px;
+            background-color: rgba(46, 125, 50, 0.85);
+            color: white;
+            position: relative;
+            z-index: 2;
+        }
+        footer p {
+    color: #e7e7e7; /* Remove default margin for the paragraph */
+    }
+        /* Responsive adjustments */
+        @media (max-width: 768px) {
+            header {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+
+            .nav-link {
+                margin: 10px 0;
+            }
+
+            main {
+                padding: 20px;
+            }
+
+            section {
+                padding: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Welcome to the Iris Flower Prediction App</h1>
+        <a href="/login" class="login-button">Login</a>
+    </header>
+    <main>
+        <section>
+            <h2>Predict Iris Flower Species</h2>
+            <p>Our application uses advanced machine learning models to predict the species of Iris flowers based on their physical attributes. Enter the measurements, and let us provide you with the predicted species!</p>
+            <p>Stay informed and make data-driven decisions in your botanical explorations.</p>
+        </section>
+    </main>
+    <footer>
+        <p>&copy; 2024 Iris Flower Prediction App. All rights reserved.</p>
+    </footer>
+</body>
+</html>

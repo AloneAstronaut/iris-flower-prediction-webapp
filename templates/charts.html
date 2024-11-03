@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Model Metrics</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+        }
+
+        header {
+            background-color: #4CAF50;
+            color: white;
+            padding: 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        h1 {
+            margin: 0;
+        }
+
+        .logout-button {
+            background-color: white;
+            color: #4CAF50;
+            padding: 10px 20px;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+        }
+
+        .logout-button:hover {
+            background-color: #e7e7e7;
+        }
+
+        main {
+            padding: 20px;
+            text-align: center;
+        }
+
+        h2 {
+            margin: 20px 0 10px;
+            color: #4CAF50;
+        }
+
+        .metric-block {
+            background-color: #ffffff;
+            border-radius: 5px;
+            padding: 15px;
+            margin: 20px auto;
+            max-width: 800px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .metric-block:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        .metric-img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 5px;
+            margin-top: 10px;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .metric-img:hover {
+            transform: scale(1.05);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        .classification-report-container {
+            overflow: hidden; /* Hide the overflow */
+            width: 100%; /* Ensure it takes full width */
+            height: 400px; /* Set height as per requirement */
+            position: relative; /* Required for absolute positioning */
+        }
+
+        .classification-report-img {
+            position: absolute; /* Position it absolutely */
+            left: 0; /* Align to the left */
+            width: 200%; /* Double the width to show only half */
+            height: auto;
+            border-radius: 5px;
+            margin-top: 10px;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .classification-report-img:hover {
+            transform: scale(1.05);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        .back-button {
+            display: inline-block;
+            margin-top: 20px;
+            padding: 10px 15px;
+            background-color: #4CAF50;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+        }
+
+        .back-button:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Model Metrics</h1>
+        <a href="/logout" class="logout-button">Logout</a>
+    </header>
+    <main>
+        <div class="metric-block">
+            <h2>Accuracy</h2>
+            <p>Accuracy: <strong>{{ accuracy }}%</strong></p>
+        </div>
+
+        <div class="metric-block">
+            <h2>Confusion Matrix</h2>
+            <img src="{{ url_for('static', filename='confusion_matrix.png') }}" alt="Confusion Matrix" class="metric-img">
+        </div>
+
+        <div class="metric-block">
+            <h2>True vs Predicted Labels</h2>
+            <img src="{{ url_for('static', filename='predictions_vs_true.png') }}" alt="True vs Predicted Labels" class="metric-img">
+        </div>
+
+        <div class="metric-block">
+            <h2>Distribution of Flower Species</h2>
+            <img src="{{ url_for('static', filename='flower_distribution.png') }}" alt="Flower Distribution" class="metric-img">
+        </div>
+
+        <div class="metric-block">
+            <h2>Training vs Testing Accuracy</h2>
+            <img src="{{ url_for('static', filename='training_testing_accuracy.png') }}" alt="Training vs Testing Accuracy" class="metric-img">
+        </div>
+
+        <div class="metric-block">
+            <h2>Classification Report</h2>
+            <div class="classification-report-container">
+                <img src="{{ url_for('static', filename='classification_report.png') }}" alt="Classification Report" class="classification-report-img">
+            </div>
+        </div>
+
+        <a href="/index" class="back-button">Back to Home</a>
+    </main>
+</body>
+</html>

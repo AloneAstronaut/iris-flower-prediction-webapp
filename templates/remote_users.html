@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Remote Users</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-image: url('https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fe0.pxfuel.com%2Fwallpapers%2F940%2F113%2Fdesktop-wallpaper-purple-irises-flower.jpg&f=1&nofb=1&ipt=7e136b16ec5e6eb4f35efab8457edb1b21d355c2d9760859a5549ee807312630&ipo=images'); /* Replace with your actual image URL */
+            background-size: cover; /* Ensure the image covers the entire area */
+            background-position: center; /* Center the image */
+            background-attachment: fixed; /* Keep the image fixed during scrolling */
+            margin: 0;
+            padding: 20px;
+            color: #333;
+        }
+        h1 {
+            color: #4CAF50;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+            background-color: rgba(255, 255, 255, 0.8); /* Semi-transparent white for readability */
+        }
+        th, td {
+            padding: 10px;
+            border: 1px solid #ddd;
+            text-align: left;
+        }
+        th {
+            background-color: #4CAF50;
+            color: white;
+        }
+        .back-button-container {
+            display: flex;
+            justify-content: center; /* Center horizontally */
+            margin-top: 20px; /* Add some margin above */
+        }
+        .back-button {
+            padding: 10px 15px;
+            background-color: #4CAF50;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+        }
+        .back-button:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body>
+    <h1>Remote Users</h1>
+    <table>
+        <thead>
+            <tr>
+                <th>Username</th>
+                <th>IP Address</th>
+                <th>Last login</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for user in remote_users %}
+            <tr>
+                <td>{{ user.username }}</td>
+                <td>{{ user.ip }}</td>
+                <td>{{ user.last_login }}</td>
+            </tr>
+            {% else %}
+            <tr>
+                <td colspan="3">No remote users found.</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+    <div class="back-button-container">
+        <a href="/index" class="back-button">Back to Home</a>
+    </div>
+</body>
+</html>

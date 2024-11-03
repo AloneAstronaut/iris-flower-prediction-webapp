@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Index Page</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-image: url('https://images.pexels.com/photos/16204985/pexels-photo-16204985/free-photo-of-purple-iris-flowers-in-a-garden-with-leaves.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2https://imgs.search.brave.com/q-gI8by2Bnfcws-PB49pQvtGvTdvRlpxYjF0n7VXD1w/rs:fit:500:0:0:0/g:ce/aHR0cHM6Ly9jZG4u/d2FsbHBhcGVyc2Fm/YXJpLmNvbS85NC83/L1RqTUVIYi5qcGc'); /* Add your image URL here */
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed; /* Keeps the background fixed while scrolling */
+            margin: 0;
+            padding: 0;
+            color: #2c3e50; /* Darker text for better contrast */
+            min-height: 100vh; /* Ensure the body takes at least the full viewport height */
+        }
+        
+        header {
+            background-color: rgba(76, 175, 80, 0.9); /* Slightly transparent for effect */
+            color: white;
+            padding: 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 3px solid #2c3e50; /* Adds a border for distinction */
+        }
+        
+        h1 {
+            margin: 0;
+            font-size: 2em; /* Increased size for prominence */
+
+        }
+        
+        .logout-button {
+            background-color: white;
+            color: #4CAF50;
+            padding: 10px 20px;
+            text-decoration: none;
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+            transition: background-color 0.3s, transform 0.3s;
+        }
+        
+        .logout-button:hover {
+            background-color: #e7e7e7;
+            transform: scale(1.05);
+        }
+        
+        main {
+            padding: 40px 20px;
+            background-color: rgba(255, 255, 255, 0.9); /* Slightly transparent white for readability */
+            border-radius: 10px; /* Rounded corners for a softer look */
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+            max-width: 800px; /* Set a max-width for better layout control */
+            margin: 40px auto; /* Centering the main block with margin */
+        }
+        
+        p {
+            font-size: 1.2em;
+            margin-bottom: 20px;
+        }
+        
+        h2 {
+            color: #4CAF50;
+            font-size: 1.8em; /* Increased heading size */
+            margin-bottom: 10px;
+        }
+        
+        .metrics-list {
+            list-style-type: none;
+            padding: 0;
+        }
+        
+        .metrics-list li {
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            margin: 10px 0;
+        }
+        
+        .metrics-list li a {
+            display: block;
+            padding: 15px;
+            text-decoration: none;
+            color: #4CAF50;
+            transition: background-color 0.3s, color 0.3s;
+        }
+        
+        .metrics-list li a:hover {
+            background-color: #f0f0f0;
+            color: #2c3e50; /* Darker color on hover */
+        }
+        
+        .metrics-list li:hover {
+            transform: translateY(-2px);
+            transition: transform 0.2s;
+        }
+        
+        /* Additional styles for responsive design */
+        @media (max-width: 600px) {
+            header {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+        
+            .logout-button {
+                margin-top: 10px;
+            }
+        
+            main {
+                padding: 20px 10px; /* Reduced padding for smaller screens */
+                margin: 20px auto; /* Adjusted margin for smaller screens */
+            }
+        
+            p, h2 {
+                font-size: 1em;
+            }
+        
+            .metrics-list li a {
+                padding: 10px;
+            }
+        }
+        </style>
+        
+</head>
+<body>
+    <header>
+        <h1>Welcome to the Index Page!</h1>
+        <a href="/logout" class="logout-button">Logout</a>
+    </header>
+    <main>
+        <p>You are successfully logged in.</p>
+        <h2>Metrics</h2>
+        <ul class="metrics-list">
+            <li><a href="/upload">Upload Dataset</a></li>
+            {% if model_trained %}
+                <li><a href="/predict">Predict</a></li>
+                <li><a href="/charts">Charts</a></li>
+            {% endif %}
+            <li><a href="/remote_users">Remote Users</a></li>
+        </ul>
+    </main>
+</body>
+</html>
