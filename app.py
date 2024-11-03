@@ -140,4 +140,5 @@ def load_model():
 
 
 if __name__ == "__main__":
-    app.run(debug=True)
+    port = int(os.environ.get('PORT', 5000))  # Use the port specified by Render
+    app.run(host='0.0.0.0', port=port, debug=False)  # Set debug to False for production
